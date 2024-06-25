@@ -1,0 +1,46 @@
+[commit]
+    gpgsign = true
+[fetch]
+    prune = true
+    writeCommitGraph = true
+[user]
+    name = L B
+    email = l.baron@demv.de
+    signingkey = F99C346F6FC65C786AEE69E84093787779EDADB9
+[alias]
+    lg = log --color --graph --pretty=format:'%G? - %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate --all
+    cm = commit --verbose
+    au = add -u
+    st = status
+    rv = remote -v
+    fa = fetch --all --tags
+    co = checkout
+    ff = ! git fa && git merge --ff-only
+    ci = check-ignore -v -n
+    aup = add -u -p
+    last = ! last.sh
+    merged = ! clean_merged.sh
+    pf = push --force-with-lease
+    yolo= ! git add -A && git commit -am "`curl -sL http://whatthecommit.com/index.txt`" && git push --force-with-lease origin
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+    quotepath = false
+[push]
+    default = current
+[rerere]
+    enabled = true
+[color]
+    ui = auto
+[github]
+    token =
+[merge]
+    tool = meld
+[gc]
+    autoDetach = false
+[gpg "ssh"]
+    allowedSignersFile = /home/lbaron/.ssh/allowed_signers
+[init]
+    templateDir = /home/lbaron/.git-template
+[pull]
+    rebase = false
